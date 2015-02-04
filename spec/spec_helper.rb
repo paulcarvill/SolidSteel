@@ -1,4 +1,6 @@
-require "webmock/rspec"
+#require "webmock/rspec"
+require 'capybara/rspec'
+require 'capybara/rails'
 
 # http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
@@ -11,6 +13,17 @@ RSpec.configure do |config|
   end
 
   config.order = :random
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 end
 
 WebMock.disable_net_connect!(allow_localhost: true)
