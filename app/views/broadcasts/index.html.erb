@@ -1,24 +1,114 @@
-<div id="tl" style="height: 600px; width: 100%; margin-top: 50px;"></div>
+<div id="tl" style="height: 400px; width: 100%; margin-top: 50px;"></div>
+<div style="width: 80%; margin: 20px auto; font-size: 24px;">
+	<input style="float: left;" type="button" value="Move year left" title="Move year left" onclick="animateTo('back', 'year');">
+	<input style="float: left;" type="button" value="Move month left" title="Move month left" onclick="animateTo('back', 'month');">
+	<input style="float: right;" type="button" value="Move year right" title="Move right" onclick="animateTo('forward', 'year');">
+	<input style="float: right;" type="button" value="Move month right" title="Move right" onclick="animateTo('forward', 'month');">
+</div>
+<div id="tl2" style="height: 400px; width: 100%; margin-top: 20px;"></div>
 
 <script>
+/* inject json into page */
 var broadcasts = <%= @broadcasts.to_s.html_safe %>;
-</script>
 
-<script>
+
+/* navigate the timeline */
+function move(moveVal) {
+    timeline.move(moveVal);
+    timeline.trigger("rangechange");
+    timeline.trigger("rangechanged");
+}
+
+
+/* animate back/forward one page */
+var animateTimeout = undefined;
+var animateFinal = undefined;
+
+function animateTo(direction, scale) {
+
+	var range = (scale == 'month' ? timeline1.getVisibleChartRange() : timeline2.getVisibleChartRange());
+
+	if (direction == "forward") {
+		animateFinal = range.end.getTime();
+	} else { /* back */
+		animateFinal = range.start.getTime();
+	}
+	
+	scale == 'month' ? timeline1.setCustomTime(animateFinal) : timeline2.setCustomTime(animateFinal);
+
+	// cancel any running animation
+	animateCancel();
+
+	// animate towards the final date
+	var animate = function () {
+		var range = (scale == 'month' ? timeline1.getVisibleChartRange() : timeline2.getVisibleChartRange());
+		var current = (range.start.getTime() + range.end.getTime())/ 2;
+		var width = (range.end.getTime() - range.start.getTime());
+	    var minDiff = Math.max(width / 1000, 1);
+		var diff = (animateFinal - current);
+	    if (Math.abs(diff) > minDiff) {
+	        // move towards the final date
+	        var start = new Date(range.start.getTime() + diff / 3);
+	        var end = new Date(range.end.getTime() + diff / 3);
+	        
+	        scale == 'month' ? timeline1.setVisibleChartRange(start, end) : timeline2.setVisibleChartRange(start, end);
+
+	        // start next timer
+	        animateTimeout = setTimeout(animate, 50);
+	    }
+	    scale == 'month' ? timeline1.trigger('rangechange') : timeline2.trigger('rangechange');
+	};
+	animate();
+}
+
+function animateCancel () {
+    if (animateTimeout) {
+        clearTimeout(animateTimeout);
+        animateTimeout = undefined;
+    }
+}
+
+
+/* format the data for timeline use */
 var data = [];
 
 for(i = 0; i < broadcasts.length; i++) {
-
-  if (broadcasts[i].broadcast_date == null) {
-    continue
-  }
-
   data.push({
   'start': new Date(broadcasts[i].broadcast_date),
-  'content' : broadcasts[i].session_name
+  'content' : "<a href='/broadcasts/"+broadcasts[i].id+"'>" + broadcasts[i].session_name + "</a>"
   });
 }
 
-var timeline = new links.Timeline(document.getElementById('tl'));
-timeline.draw(data, { zoomMax : 31536000000, zoomMin : 2419200000, height: "100%", min: new Date("1 July 1998")});
+
+/* functions to keep timelines in sync */
+function onrangechange1() {
+    var range = timeline1.getVisibleChartRange();
+    timeline2.setVisibleChartRange(range.start, range.end);
+}
+
+function onrangechange2() {
+    var range = timeline2.getVisibleChartRange();
+    timeline1.setVisibleChartRange(range.start, range.end);
+}
+
+
+/* instantiate the timeline (month scale) */
+var timeline1 = new links.Timeline(document.getElementById('tl'));
+
+/* add event listener */
+links.events.addListener(timeline1, 'rangechange', onrangechange1);
+
+/* draw the first timeline */
+timeline1.draw(data, { zoomMax : 2419200000, zoomMin : 2419200000, height: "100%", min: new Date("1 July 1998")});
+
+/* instantiate 2nd timeline (year scale) */
+var timeline2 = new links.Timeline(document.getElementById('tl2'));
+
+/* add event listener */
+links.events.addListener(timeline2, 'rangechange', onrangechange2);
+
+timeline2.draw(data, { zoomMax : 31536000000, zoomMin : 31536000000, height: "100%", min: new Date("1 July 1998"), 'style': 'dot'});
+
+onrangechange1();
+
 </script>

@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.2.0"
+ruby "2.1.3"
 
 gem "airbrake"
 gem "bourbon", "~> 4.1.0"
@@ -28,6 +28,7 @@ gem "capistrano"
 gem "capistrano-rails"
 gem "capistrano-bundler"
 gem "capistrano-rvm"
+gem 'actionpack-page_caching'
 
 group :development do
   gem 'seed_dump'

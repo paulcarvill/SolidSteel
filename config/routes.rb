@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   resources :broadcasts
   
-  root 'pages#home'
+  root 'broadcasts#index'
 end

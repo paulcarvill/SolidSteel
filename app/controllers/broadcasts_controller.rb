@@ -1,5 +1,6 @@
 class BroadcastsController < ApplicationController
 	before_action :set_broadcast, only: [:show]
+	caches_page :index
 
 	def index
 		@broadcasts = Broadcast.all.order(broadcast_date: :desc).to_json
