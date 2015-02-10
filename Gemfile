@@ -30,6 +30,7 @@ gem "capistrano-bundler"
 gem "capistrano-rvm"
 
 group :development do
+  gem 'seed_dump'
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"

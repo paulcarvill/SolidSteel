@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p><a href="/broadcasts/<%= @track.broadcast_id %>">broadcast <%= @track.broadcast_id %></a></p>
+<p><%= @track.part %></p>
+<p><%= @track.artist %></p>
+<p><%= @track.title %></p>
+<p><%= @track.composed %></p>
+<p><%= @track.published %></p>
+<p><%= @track.record_label %></p>
+<p><%= @track.catalogue_no %></p>
+<p><%= @track.duration %></p>
+<p><%= @track.notes %></p>
+
+<%= link_to 'Back', tracks_path %>

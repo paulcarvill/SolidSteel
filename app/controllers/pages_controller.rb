@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	@mix = Mix.get_latest
+  	@mix = Broadcast.get_latest
   end
 
   def about

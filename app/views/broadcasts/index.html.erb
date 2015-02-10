@@ -1,0 +1,24 @@
+<div id="tl" style="height: 600px; width: 100%; margin-top: 50px;"></div>
+
+<script>
+var broadcasts = <%= @broadcasts.to_s.html_safe %>;
+</script>
+
+<script>
+var data = [];
+
+for(i = 0; i < broadcasts.length; i++) {
+
+  if (broadcasts[i].broadcast_date == null) {
+    continue
+  }
+
+  data.push({
+  'start': new Date(broadcasts[i].broadcast_date),
+  'content' : broadcasts[i].session_name
+  });
+}
+
+var timeline = new links.Timeline(document.getElementById('tl'));
+timeline.draw(data, { zoomMax : 31536000000, zoomMin : 2419200000, height: "100%", min: new Date("1 July 1998")});
+</script>
