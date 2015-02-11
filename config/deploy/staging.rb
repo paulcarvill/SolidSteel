@@ -1,12 +1,15 @@
+set :stage, :staging
+set :branch, "master"
+
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary server in each group
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{rails@178.62.53.140}
-role :web, %w{rails@178.62.53.140}
-role :db,  %w{rails@178.62.53.140}
+role :app, %w{deploy@192.168.50.4}
+role :web, %w{deploy@192.168.50.4}
+role :db,  %w{deploy@192.168.50.4}
 
 
 # Extended Server Syntax
@@ -15,8 +18,21 @@ role :db,  %w{rails@178.62.53.140}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '178.62.53.140', user: 'rails', roles: %w{web app}, my_property: :my_value
+server '192.168.50.4', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
+set :deploy_to, "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
+
+# dont try and infer something as important as environment from
+# stage name.
+set :rails_env, :staging
+
+# number of unicorn workers, this will be reflected in
+# the unicorn.rb and the monit configs
+set :unicorn_worker_count, 5
+
+# whether we're using ssl or not, used for building nginx
+# config file
+set :enable_ssl, false
 
 # Custom SSH Options
 # ==================

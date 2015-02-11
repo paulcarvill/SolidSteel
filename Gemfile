@@ -58,4 +58,5 @@ group :test do
 end
 
 group :staging, :production do
+  gem 'capistrano-rbenv', "~> 2.0" 
 end
