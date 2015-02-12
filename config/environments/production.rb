@@ -23,7 +23,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.serve_static_files = true
+  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.static_cache_control = "public, max-age=#{1.year.to_i}"
   # Enable deflate / gzip compression of controller-generated responses
   config.middleware.use Rack::Deflater
@@ -84,5 +84,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  #config.action_mailer.default_url_options = { host: ENV.fetch("HOST") }
+  config.action_mailer.default_url_options = { host: ENV.fetch("HOST") }
 end
