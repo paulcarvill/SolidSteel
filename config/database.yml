@@ -19,3 +19,7 @@ staging:
   min_messages: warning
   pool: 2
   timeout: 5000
+
+production:
+  <<: *default
+  database: solidsteel_development

@@ -10,5 +10,4 @@ Rails.application.config.assets.version = (ENV["ASSETS_VERSION"] || "1.0")
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
-Rails.application.config.assets.precompile += %w( timeline-min.js )
-Rails.application.config.assets.precompile += %w( timeline.css )
+#Rails.application.config.assets.precompile += ['timeline-min.js', 'timeline.css']
