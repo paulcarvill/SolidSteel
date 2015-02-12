@@ -20,6 +20,8 @@ role :db,  %w{deploy@192.168.50.4}
 
 server '192.168.50.4', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
+set :server_name, 'localhost'
+
 set :deploy_to, "/home/#{fetch(:deploy_user)}/apps/#{fetch(:full_app_name)}"
 
 # dont try and infer something as important as environment from

@@ -2,6 +2,7 @@
 lock '3.3.5'
 
 set :application, 'solidsteel'
+set :full_app_name, 'solidsteel'
 set :deploy_user, 'deploy'
 set :repo_url, 'git@github.com:paulcarvill/SolidSteel.git'
 
@@ -34,6 +35,8 @@ set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+
+set :tests, []
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

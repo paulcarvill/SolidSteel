@@ -7,8 +7,8 @@
   <title><%= title %></title>
   <%= stylesheet_link_tag :application, media: "all" %>
   <%= csrf_meta_tags %>
-  <script src="<%= asset_path 'timeline-min.js' %>"></script>
-  <link rel="stylesheet" href="<%= asset_path 'timeline.css' %>" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 <body class="<%= body_class %>">
   <%= render "flashes" -%>
