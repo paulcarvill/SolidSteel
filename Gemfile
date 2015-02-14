@@ -5,29 +5,22 @@ ruby "2.1.3"
 gem "airbrake"
 gem "bourbon", "~> 4.1.0"
 gem "coffee-rails", "~> 4.1.0"
-gem "delayed_job_active_record"
 gem "email_validator"
 gem "flutie"
 gem "high_voltage"
 gem "i18n-tasks"
 gem "jquery-rails"
 gem "neat", "~> 1.7.0"
-gem "newrelic_rpm"
 gem "normalize-rails", "~> 3.0.0"
 gem "mysql2"
 gem "rack-timeout"
 gem "rails", "4.2.0"
-gem "recipient_interceptor"
 gem "refills"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
-gem "capistrano"
-gem "capistrano-rails"
-gem "capistrano-bundler"
-gem "capistrano-rvm"
 gem 'actionpack-page_caching'
 
 group :development do
@@ -55,8 +48,4 @@ group :test do
   gem "shoulda-matchers", require: false
   gem "timecop"
   gem "webmock"
-end
-
-group :staging, :production do
-  gem 'capistrano-rbenv', "~> 2.0" 
 end
