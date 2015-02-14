@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'pages/about' =>'pages#about'
 
+  get 'broadcasts/timeline' =>'broadcasts#timeline'
+
   resources :broadcasts
   
   root 'broadcasts#index'
