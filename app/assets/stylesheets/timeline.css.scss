@@ -68,3 +68,27 @@
 	color: yellow;
 	border-bottom: 3px solid yellow;
 }
+
+
+@media (max-width: 600px) {
+
+	#container {
+		margin-top: 50px;
+	}
+
+	#timeline,
+	#search-timeline {
+		width: 10% !important;
+		padding: 0 !important;
+	}
+
+	.decade, .year {
+		width: 100% !important;
+		text-align: left !important;
+	}
+
+	#menu,
+	#search-menu {
+		width: 80% !important;
+	}
+}

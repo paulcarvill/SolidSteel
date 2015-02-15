@@ -60,6 +60,8 @@ newTrack = function(){
 
 
 $(document).ready(function() {
+
+
     bigSlide = $('#timeline .year').bigSlide({
     	'side' : 'right',
     	'menuWidth' : '20%',
@@ -138,7 +140,8 @@ $(document).ready(function() {
     	$('#search-form').css('-webkit-transform','scaleY(0)');
 
     	window.setTimeout(function(){
-		$('#search-timeline').css('display', 'block');
+		  $('#search-timeline').css('display', 'block');
+          $('#search-form').css('display', 'none');
 		}, 50);
 
 		window.setTimeout(function(){
