@@ -58,8 +58,13 @@
 	display: block;
 }
 
+#search-timeline .year {
+	border-bottom: 3px solid #990;
+	color: #999;
+}
+
 .year:hover,
-.current {
+#search-timeline .current {
 	color: yellow;
 	cursor: pointer;
 	border-bottom: 3px solid yellow;
