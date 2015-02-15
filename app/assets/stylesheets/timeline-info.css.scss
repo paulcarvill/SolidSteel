@@ -1,8 +1,21 @@
-#menu {
+#menu,
+#search-menu {
 	background: #393939;
 	overflow-y: scroll;
 }
 
-::-webkit-scrollbar { 
-    display: none; 
+.panel {
+	padding: 20px 10px;
+}
+
+#menu div p:nth-child(n+2) {
+	font-size: 0.8em;
+}
+
+a {
+	color: #fff;
+}
+
+a:hover {
+	color: yellow;
 }

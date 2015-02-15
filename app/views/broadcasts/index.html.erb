@@ -1,7 +1,7 @@
 <nav>
-	<p>list</p>
+	<p id="home">timeline</p>
 	<p id="search">search</p>
-	<p>play</p>
+	<p id="playing">play</p>
 </nav>
 
 		<div id="container">
@@ -10,17 +10,17 @@
 		<div id="timeline" class="push">
 			<!-- 2010s -->
 			<div class="decade current-decade">
-				<div class="year">0</div>
-				<div class="year">1</div>
-				<div class="year">2</div>
-				<div class="year">3</div>
-				<div class="year">4</div>
-				<div class="year">5</div>
+				<div class="year">2010</div>
+				<div class="year">11</div>
+				<div class="year">12</div>
+				<div class="year">13</div>
+				<div class="year">14</div>
+				<div class="year">15</div>
 			</div>
 
 			<!-- 00s -->
 			<div class="decade">
-				<div class="year">0</div>
+				<div class="year">2000</div>
 				<div class="year">1</div>
 				<div class="year">2</div>
 				<div class="year">3</div>
@@ -29,12 +29,12 @@
 				<div class="year">6</div>
 				<div class="year">7</div>
 				<div class="year">8</div>
-				<div class="year">9</div>
+				<div class="year">2009</div>
 			</div>
 
 			<!-- 90s -->
 			<div class="decade">
-				<div class="year">0</div>
+				<div class="year">1990</div>
 				<div class="year">1</div>
 				<div class="year">2</div>
 				<div class="year">3</div>
@@ -43,13 +43,13 @@
 				<div class="year">6</div>
 				<div class="year">7</div>
 				<div class="year">8</div>
-				<div class="year">9</div>
+				<div class="year">1999</div>
 			</div>
 
 			<!-- earlier/other -->
 			<div class="decade">
-				<div class="year">8</div>
-				<div class="year">9</div>
+				<div class="year">1988</div>
+				<div class="year">1989</div>
 			</div>
 		</div>
 
@@ -57,11 +57,11 @@
 			<p>THIS IS THE MIX NAME</p>	
 		</div>
 
-		<div id="play" class="play firstPlay">
+		<div id="play" class="play firstPlay" style="display:none">
 			
 		</div>
 
-		<div id="search-form">
+		<div id="search-form" style="display:none">
 			<form>
 				<input type="text" placeholder="Search by artist, track, date" />
 			</form>
@@ -70,19 +70,17 @@
 		<div id="search-timeline" class="push">
 			<!-- 2010s -->
 			<div class="decade current-decade">
-				<div class="year">0</div>
-				<div class="year">1</div>
-				<div class="year">2</div>
-				<div class="year">
-					<a href="#" id="show-timeline">3</a>
-				</div>
-				<div class="year">4</div>
-				<div class="year">5</div>
+				<div class="year">2010</div>
+				<div class="year current">11</div>
+				<div class="year current">12</div>
+				<div class="year current">13</div>
+				<div class="year">14</div>
+				<div class="year">15</div>
 			</div>
 
 			<!-- 00s -->
 			<div class="decade">
-				<div class="year">0</div>
+				<div class="year">2000</div>
 				<div class="year">1</div>
 				<div class="year">2</div>
 				<div class="year">3</div>
@@ -90,13 +88,13 @@
 				<div class="year">5</div>
 				<div class="year">6</div>
 				<div class="year">7</div>
-				<div class="year">8</div>
-				<div class="year">9</div>
+				<div class="year current">8</div>
+				<div class="year">2009</div>
 			</div>
 
 			<!-- 90s -->
 			<div class="decade">
-				<div class="year">0</div>
+				<div class="year">1990</div>
 				<div class="year">1</div>
 				<div class="year">2</div>
 				<div class="year">3</div>
@@ -105,13 +103,13 @@
 				<div class="year">6</div>
 				<div class="year">7</div>
 				<div class="year">8</div>
-				<div class="year">9</div>
+				<div class="year">1999</div>
 			</div>
 
 			<!-- earlier/other -->
 			<div class="decade">
-				<div class="year">8</div>
-				<div class="year">9</div>
+				<div class="year">1988</div>
+				<div class="year">1989</div>
 			</div>
 		</div>
 
@@ -119,90 +117,108 @@
 			<p>2013</p>
 			<div>
 				<p>DEC</p>
-				<p>Lorem ipsum dolor sit amco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint ia deserunt mollit anim id est laborum.</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolpariatur.</a></p>
 			</div>
 			<div>
-				<a href="#" onclick="play()">
-					<p>NOV</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation a deserunt mollit anim id est laborum.</p>
+				<p>NOV</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labo at laborum.</a></p>
 				</a>
 			</div>
 			<div>
 				<p>OCT</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitationcia deserunt mollit anim id est laborum.</p>
+				<p><a href="#" onclick="play()">Sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore deserunt mollit anim id est laborum.</a></p>
 			</div>
 			<div>
 				<p>SEP</p>
-				<p>Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p><a href="#" onclick="play()">Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
 			</div>
 			<div>
 				<p>AUG</p>
-				<p>oluptate velit esse
+				<p><a href="#" onclick="play()">oluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
 			</div>
 			<div>
 				<p>JUL</p>
-				<p>Lorem ipsum dolor sit amet, iatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amet, iatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
 			</div>
 			<div>
 				<p>JUN</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicuptate velit esse
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amet, consectetur adipisicuptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
 			</div>
 			<div>
 				<p>MAY</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				<p><a href="#" onclick="play()">Lorem ipsum dolor son ullamco laboris nisi ut aliquip ex ea commodo
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
 			</div>
 			<div>
 				<p>APR</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				quis nostrud exercitfficia deserunt mollit anim id est laborum.</a></p>
 			</div>
 			<div>
 				<p>MAR</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				quis nostrud exercitation lla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
 			</div>
 			<div>
 				<p>FEB</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				<p><a href="#" onclick="play()">Lorem ipsum dolor tion ullamco laboris nisi ut aliquip ex ea commodo
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
 			</div>
 			<div>
 				<p>JAN</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor ion ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute iruulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
+			</div>
+		</div>
+
+
+
+
+
+		<div id="search-menu" class="panel" role="navigation">
+			<p>Search results for <b>"bonobo"</b></p>
+			<div>
+				<p style="text-decoration:underline">2013</p>
+				<p style="font-size: 0.8em">DEC</p>
+				<p style="font-size: 0.8em"><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
+				<br />
+			</div>
+			<div>
+				<p style="text-decoration:underline">2012</p>
+				<p style="font-size: 0.8em">JUN</p>
+				<p style="font-size: 0.8em"><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
+				<br />
+			</div>
+			<div>
+				<p style="text-decoration:underline">2011</p>
+				<p style="font-size: 0.8em">OCT</p>
+				<p style="font-size: 0.8em"><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a></p>
+				<p style="font-size: 0.8em">JUN</p>
+				<p style="font-size: 0.8em"><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
+				<br />
+			</div>
+			<div>
+				<p style="text-decoration:underline">2008</p>
+				<p style="font-size: 0.8em">MAR</p>
+				<p style="font-size: 0.8em"><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a></p>
+				<br />
 			</div>
 		</div>
 	</div>

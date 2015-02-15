@@ -21,3 +21,7 @@ body {
 ::selection{ background-color: transparent;}
 ::moz-selection{ background-color: transparent;}
 ::webkit-selection{ background-color: transparent;}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
