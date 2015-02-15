@@ -3,8 +3,12 @@ html, body {
 }
 
 body {
-	background-color: #393939;
+	background-color: #fff;
 	color: #fff;
+	border: 8px solid #fff;
+	font-family: 'Decima Pro';
+	// font-family: 'Decima Pro';
+	// font-family: 'Decima Pro Bold';
 }
 
 #container {
@@ -24,4 +28,13 @@ body {
 
 ::-webkit-scrollbar { 
     display: none; 
+}
+
+a {
+	color: #2e2e33;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: inherit;
 }

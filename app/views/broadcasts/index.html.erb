@@ -1,10 +1,19 @@
 <nav>
-	<p id="home">timeline</p>
-	<p id="search">search</p>
-	<p id="playing">play</p>
+	<p id="home"><img src="<%= asset_url 'icons/list.svg' %>"></p>
+	<p id="search"><img src="<%= asset_url 'icons/magnifying-glass.svg' %>"></p>
+	<p id="playing">
+		<img id="playButton" src="<%= asset_url 'icons/bar-graph.svg' %>">
+		<img id="pauseButton" src="<%= asset_url 'icons/pause.svg' %>">
+	</p>
 </nav>
 
-		<div id="container">
+<div id="playDetails">
+	<p>27-12-13<br />Bonobo, DK, Coldcut, DJ Cheeba, DJ Food, DJ Moneyshot, Hexstatic</p>	
+</div>
+
+
+
+<div id="container">
 	<div id="inner-container">
 
 		<div id="timeline" class="push">
@@ -53,10 +62,6 @@
 			</div>
 		</div>
 
-		<div id="playDetails">
-			<p>THIS IS THE MIX NAME</p>	
-		</div>
-
 		<div id="play" class="play firstPlay" style="display:none">
 			
 		</div>
@@ -64,6 +69,7 @@
 		<div id="search-form" style="display:none">
 			<form>
 				<input type="text" placeholder="Search by artist, track, date" />
+				<span></span>
 			</form>
 		</div>
 
@@ -193,33 +199,39 @@
 
 
 		<div id="search-menu" class="panel" role="navigation">
-			<p>Search results for <b>"bonobo"</b></p>
+			<h3>Search results for <b>"bonobo"</b></h3>
 			<div>
 				<p style="text-decoration:underline">2013</p>
-				<p style="font-size: 0.8em">DEC</p>
-				<p style="font-size: 0.8em"><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
+				<p>DEC</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
 				<br />
 			</div>
 			<div>
 				<p style="text-decoration:underline">2012</p>
-				<p style="font-size: 0.8em">JUN</p>
-				<p style="font-size: 0.8em"><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
+				<p>JUN</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
 				<br />
 			</div>
 			<div>
 				<p style="text-decoration:underline">2011</p>
-				<p style="font-size: 0.8em">OCT</p>
-				<p style="font-size: 0.8em"><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a></p>
-				<p style="font-size: 0.8em">JUN</p>
-				<p style="font-size: 0.8em"><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
+				<p>OCT</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a></p>
+				<p>JUN</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
 				<br />
 			</div>
 			<div>
 				<p style="text-decoration:underline">2008</p>
-				<p style="font-size: 0.8em">MAR</p>
-				<p style="font-size: 0.8em"><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a></p>
+				<p>MAR</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a></p>
 				<br />
 			</div>
 		</div>
 	</div>
 </div>
+
+<nav id="social">
+	<p id="fb"><a href="#">facebook</a></p>
+	<p id="tw"><a href="#">twitter</a></p>
+	<p id="vm"><a href="#">vimeo</a></p>
+</nav>

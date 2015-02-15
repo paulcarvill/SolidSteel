@@ -13,16 +13,23 @@ input {
 	width: 100%;
 }
 
-input[type="text"], textarea {
-  background-color : #393939; 
+input[type="text"] {
+  background-image: asset_url("icons/chevron-thin-right.svg");
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  background-position: 100% 0;
+  background-color: transparent;
   border: none;
-  border-bottom: 3px solid #fff;
-  color: #fff;
+  border-bottom: 2px dotted #fff;
+  color: #fff !important;
   font-size: 32px;
   outline: 0;
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
+  font-family: 'Decima Pro' !important;
+  padding: 0 0 3px 0;
+  margin: 0;
 }
 
 input[type="text"]:focus {
@@ -30,8 +37,50 @@ input[type="text"]:focus {
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
+  color: #fff !important;
 }
 
+input[type="text"]:hover {
+  border-color: #fff;
+}
+
+::-webkit-input-placeholder {
+   color: #fff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #fff; 
+}
+
+:-ms-input-placeholder {  
+  color: #fff;
+}
+
+#search-form span {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 2px solid #fff;
+  position: relative;
+  top: -2px;
+}
+
+#search-form span.animate {
+  -webkit-animation: move 2s linear forwards;  
+}
+
+@-webkit-keyframes move {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
 
 
 

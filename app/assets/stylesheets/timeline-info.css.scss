@@ -1,7 +1,9 @@
 #menu,
 #search-menu {
-	background: #393939;
+	background: #fff;
+	color: #2e2e33;
 	overflow-y: scroll;
+	padding: 28px;
 }
 
 .panel {
@@ -9,13 +11,9 @@
 }
 
 #menu div p:nth-child(n+2) {
-	font-size: 0.8em;
+
 }
 
-a {
-	color: #fff;
-}
-
-a:hover {
-	color: yellow;
+#menu a {
+	color: #2e2e33;
 }

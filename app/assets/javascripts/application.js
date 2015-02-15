@@ -98,6 +98,7 @@ $(document).ready(function() {
     	$('#timeline').css('-webkit-transform','scaleY(0)');
     	$('#search-timeline').css('-webkit-transform','scaleY(0)');
     	$('#search-form').css('-webkit-transform','scaleY(0)');
+        $('#play').css('display','block');
 
     	window.setTimeout(function(){
     		$('#search-timeline').css('display','none');
@@ -137,17 +138,19 @@ $(document).ready(function() {
 
     	this.reset();
 
-    	$('#search-form').css('-webkit-transform','scaleY(0)');
+        $('#search-form span').addClass('animate');
 
     	window.setTimeout(function(){
-		  $('#search-timeline').css('display', 'block');
-          $('#search-form').css('display', 'none');
-		}, 50);
+            $('#search-form').css('-webkit-transform','scaleY(0)');
+            $('#search-timeline').css('display', 'block');
+		}, 900);
 
 		window.setTimeout(function(){
+            $('#search-form').css('display', 'none');
+            $('#search-form span').removeClass('animate');
 			$('#search-timeline').css('-webkit-transform','scaleY(1)');
 			searchBigSlide.toggleOpen();
-		}, 300);
+		}, 1000);
     })
 
 });
@@ -167,5 +170,6 @@ function play() {
 		}, 300);
 
 	bigSlide.toggleClose();
-	$('#playing').text('playing...');
+    $('#playButton').fadeOut();
+	$('#pauseButton').fadeIn();
 }

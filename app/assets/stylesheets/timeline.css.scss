@@ -15,7 +15,7 @@
 #timeline {
 	float: left;
 	width: 100%;
-	padding: 0 50px;
+	padding: 0 128px;
 	position: relative;
 }
 
@@ -41,7 +41,7 @@
 	float: left;
 	width: 11.11%;
 	text-align: center;
-	border-bottom: 3px solid #fff;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.6);
 }
 
 .year:first-of-type,
@@ -59,14 +59,22 @@
 }
 
 #search-timeline .year {
-	border-bottom: 3px solid #999;
-	color: #999;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+	color: #fff;
+}
+
+.year:hover {
+	cursor: pointer;
+}
+
+#search-timeline .year {
+	cursor: default;
 }
 
 .year:hover,
 #search-timeline .current {
-	color: yellow;
-	border-bottom: 3px solid yellow;
+	font-weight: bold;
+	border-bottom: 2px solid rgba(255,255,255, 1);
 }
 
 

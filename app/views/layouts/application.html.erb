@@ -9,9 +9,36 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= body_class %>">
+<body class="<%= body_class %>" style="background-image:url(<%= asset_url 'backgrounds/bonobo.jpg' %>); background-size: cover; background-position: 50% 50%">
   <%= render "flashes" -%>
   <%= yield %>
   <%= render "javascript" %>
+
+  <script type="text/javascript">
+    (function() {
+        var path = '//easy.myfonts.net/v2/js?sid=267599(font-family=Decima+Pro+Light)&sid=267601(font-family=Decima+Pro)&sid=267602(font-family=Decima+Pro+Bold)&key=wQmdUZ5j9v',
+            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+            trial = document.createElement('script');
+        trial.type = 'text/javascript';
+        trial.async = true;
+        trial.src = protocol + path;
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(trial);
+    })();
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var path = '//easy.myfonts.net/v2/js?sid=255331(font-family=Decima+Mono+X+Bold)&sid=255332(font-family=Decima+Mono+X+Light)&sid=255335(font-family=Decima+Mono+X)&key=EGiDn8fIsE',
+            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+            trial = document.createElement('script');
+        trial.type = 'text/javascript';
+        trial.async = true;
+        trial.src = protocol + path;
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(trial);
+    })();
+</script>
+
 </body>
 </html>
