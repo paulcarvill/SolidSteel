@@ -60,7 +60,7 @@ newTrack = function(){
 
 
 $(document).ready(function() {
-    bigSlide = $('.year').bigSlide({
+    bigSlide = $('#timeline .year').bigSlide({
     	'side' : 'right',
     	'menuWidth' : '20%',
     	'easyClose' : true
@@ -108,9 +108,9 @@ $(document).ready(function() {
 		}, 300);
     });
 
-    $('.year').click(function(){
-    	searchBigSlide.toggleClose();
-    });
+    // $('.year').click(function(){
+    // 	searchBigSlide.toggleClose();
+    // });
 
     $('#play').unbind().click(newTrack);
 
@@ -119,6 +119,7 @@ $(document).ready(function() {
     	$('#search-timeline').css('-webkit-transform','scaleY(0)');
     	$('#play').css('-webkit-transform','scaleY(0)');
     	$('#playDetails').hide();
+        bigSlide.toggleClose();
     	searchBigSlide.toggleClose();
 
     	window.setTimeout(function(){
