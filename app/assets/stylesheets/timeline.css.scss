@@ -81,13 +81,25 @@
 @media (max-width: 600px) {
 
 	#container {
-		margin-top: 50px;
+		margin-top: 60px;
+		margin-bottom: 50px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 50px;
 	}
 
 	#timeline,
 	#search-timeline {
 		width: 10% !important;
 		padding: 0 !important;
+		
+		overflow-y: scroll;
+		position: fixed;
+		top: 70px;
+		bottom: 40px;
+		left: 8px;
 	}
 
 	.decade, .year {
@@ -95,8 +107,21 @@
 		text-align: left !important;
 	}
 
+	.year {
+		margin-bottom: 10px;
+		padding-left: 2px;
+	}
+
+	.decade {
+		margin: 0;
+	}
+
 	#menu,
 	#search-menu {
 		width: 80% !important;
+	}
+
+	#social {
+		margin-left: 32px;
 	}
 }

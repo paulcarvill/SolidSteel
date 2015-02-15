@@ -9,7 +9,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= body_class %>" style="background-image:url(<%= asset_url 'backgrounds/bonobo.jpg' %>); background-size: cover; background-position: 50% 50%">
+<body class="<%= body_class %>" style="background-image:url(<%= asset_url 'backgrounds/bonobo.jpg' %>); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat">
   <%= render "flashes" -%>
   <%= yield %>
   <%= render "javascript" %>
