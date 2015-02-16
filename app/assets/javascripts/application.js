@@ -136,16 +136,15 @@ $(document).ready(function() {
     $('form').submit(function(e){
     	e.preventDefault();
 
-    	this.reset();
-
         $('#search-form span').addClass('animate');
-
+        
     	window.setTimeout(function(){
             $('#search-form').css('-webkit-transform','scaleY(0)');
             $('#search-timeline').css('display', 'block');
 		}, 900);
 
 		window.setTimeout(function(){
+            $('form')[0].reset();
             $('#search-form').css('display', 'none');
             $('#search-form span').removeClass('animate');
 			$('#search-timeline').css('-webkit-transform','scaleY(1)');

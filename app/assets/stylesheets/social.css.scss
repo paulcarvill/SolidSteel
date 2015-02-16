@@ -11,3 +11,12 @@
 #social a {
 	color: #fff;
 }
+
+@media (max-width: 600px) {
+	#social {
+		position: static;
+		clear: left;
+		margin-left: 20%;
+		width: 100%;
+	}
+}

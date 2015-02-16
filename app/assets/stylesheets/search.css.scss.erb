@@ -82,14 +82,9 @@ input[type="text"]:hover {
   }
 }
 
-
-
-
 #search-timeline {
-
   padding: 0 50px;
   display: none;
-
   -webkit-transform: scaleY(0);
   -o-transform: scaleY(0);
   -ms-transform: scaleY(0);
@@ -100,4 +95,30 @@ input[type="text"]:hover {
   -o-transition: -o-transform 0.26s ease;
   -ms-transition: -ms-transform 0.26s ease;
   transition: transform 0.26s ease;
+}
+
+#search-timeline .year {
+  border-bottom: none;
+  color: #fff;
+}
+
+#search-timeline .current {
+  font-weight: bold;
+  border-bottom: 2px solid rgba(255,255,255, 1);
+}
+
+@media (max-width: 600px) {
+  input[type="text"] {
+    font-size: 16px;
+    background-size: 16px 16px;
+  }
+
+  #search-timeline .decade div:not(.current) {
+    display: none;
+  }
+
+  #search-timeline .year,
+  #search-timeline .current {
+    border-bottom: none;
+  }
 }

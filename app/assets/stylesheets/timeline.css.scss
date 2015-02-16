@@ -38,7 +38,7 @@
 }
 
 .year {
-	float: left;
+	float: right;
 	width: 11.11%;
 	text-align: center;
 	border-bottom: 2px solid rgba(255, 255, 255, 0.6);
@@ -47,20 +47,15 @@
 .year:first-of-type,
 .year:last-of-type {
 	width: 5.55%;
-	text-align: left;
+	text-align: right;
 }
 
 .year:last-of-type {
-	text-align: right;
+	text-align: left;
 }
 
 .year a {
 	display: block;
-}
-
-#search-timeline .year {
-	border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-	color: #fff;
 }
 
 .year:hover {
@@ -71,35 +66,26 @@
 	cursor: default;
 }
 
-.year:hover,
-#search-timeline .current {
+.year:hover {
 	font-weight: bold;
 	border-bottom: 2px solid rgba(255,255,255, 1);
 }
 
 
 @media (max-width: 600px) {
-
-	#container {
-		margin-top: 60px;
-		margin-bottom: 50px;
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 50px;
-	}
-
 	#timeline,
 	#search-timeline {
-		width: 10% !important;
-		padding: 0 !important;
-		
+		width: 15% !important;
+		padding: 0;
 		overflow-y: scroll;
-		position: fixed;
-		top: 70px;
-		bottom: 40px;
-		left: 8px;
+		margin-top: 96px;
+		border-right: 1px solid #fff;
+		
+	}
+
+	.decade {
+		position: relative;
+		left: 5px;
 	}
 
 	.decade, .year {
@@ -108,8 +94,15 @@
 	}
 
 	.year {
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 		padding-left: 2px;
+		border-bottom: 0;
+		text-align: right !important;
+		background-image: asset_url("icons/circle.svg");
+		background-repeat: no-repeat;
+		background-position: 100% 50%;
+		background-size: 10px 10px;
+		padding-right: 20px;
 	}
 
 	.decade {
@@ -119,9 +112,5 @@
 	#menu,
 	#search-menu {
 		width: 80% !important;
-	}
-
-	#social {
-		margin-left: 32px;
 	}
 }

@@ -7,8 +7,8 @@ body {
 	color: #fff;
 	border: 8px solid #fff;
 	font-family: 'Decima Pro';
-	// font-family: 'Decima Pro';
-	// font-family: 'Decima Pro Bold';
+	/*font-family: 'Decima Pro';
+	font-family: 'Decima Pro Bold';*/
 }
 
 #container {
@@ -20,6 +20,38 @@ body {
 #inner-container {
 	display: table-cell;
 	vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+
+	html,
+	body,
+	#container {
+		overflow-y: scroll;
+	}
+
+	#container {
+		display: table;
+		width: 100%;
+		height: 100%;
+	}
+
+	#inner-container {
+		width: 100%;
+	}
+
+	body {
+		border: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.hideWhenSmall {
+		display: none;
+	}
 }
 
 ::selection{ background-color: transparent;}
