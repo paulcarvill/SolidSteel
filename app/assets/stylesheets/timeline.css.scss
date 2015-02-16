@@ -73,11 +73,10 @@
 
 
 @media (max-width: 600px) {
-	#timeline,
-	#search-timeline {
+	#timeline:not(.alt-timeline),
+	#search-timeline:not(.alt-timeline) {
 		width: 15% !important;
 		padding: 0;
-		overflow-y: scroll;
 		margin-top: 96px;
 		border-right: 1px solid #fff;
 		
@@ -88,12 +87,13 @@
 		left: 5px;
 	}
 
-	.decade, .year {
+	#timeline:not(.alt-timeline) .decade,
+	#timeline:not(.alt-timeline) .year {
 		width: 100% !important;
 		text-align: left !important;
 	}
 
-	.year {
+	#timeline:not(.alt-timeline) .year {
 		margin-bottom: 20px;
 		padding-left: 2px;
 		border-bottom: 0;
@@ -105,12 +105,24 @@
 		padding-right: 20px;
 	}
 
-	.decade {
+	#timeline:not(.alt-timeline) .decade {
 		margin: 0;
 	}
 
 	#menu,
 	#search-menu {
 		width: 80% !important;
+	}
+
+	#timeline.alt-timeline,
+	#timeline.alt-search-timeline {
+		width: 100% !important;
+		padding: 0;
+		overflow-x: scroll;
+	}
+
+	#timeline.alt-timeline .decade {
+		padding: 0 50px;
+		width: 200%;
 	}
 }

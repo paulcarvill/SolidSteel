@@ -111,6 +111,25 @@ $(document).ready(function() {
 		}, 300);
     });
 
+    var timelineStyle = 'vert';
+
+    $('#vm').click(function(){
+
+        $('#social').css({
+            'position' : 'absolute',
+            'bottom' : '0',
+            'width' : 'auto'
+        });
+
+        if(timelineStyle == 'vert') {
+            $('#timeline').addClass('alt-timeline');
+            timelineStyle = 'horiz';
+        } else {
+            $('#timeline').removeClass('alt-timeline');
+            timelineStyle = 'vert';
+        }
+    })
+
     // $('.year').click(function(){
     // 	searchBigSlide.toggleClose();
     // });
